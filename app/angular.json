@@ -27,6 +27,7 @@
               "src/styles.css"
             ],
             "scripts": [
+              "src/app/new-lease/LeaseService.ts"
               
             ]
           },
