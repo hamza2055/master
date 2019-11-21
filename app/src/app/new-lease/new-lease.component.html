@@ -415,7 +415,7 @@
                             <div class="form-row">
                                 <div class="col-md-6 mb-3">
                                     <label for="validationCustom03">Payment interval</label>
-                                    <select class="form-control" id="validationCustom04" [(ngModel)]="paymentIntervals" name="contractNo14" >
+                                    <select class="form-control" id="validationCustom04" [(ngModel)]="paymentIntervals" name="contractNo14">
                                         <option>Select period</option>
                                         <option>Monthly</option>
                                         <option>Quarterly</option>
@@ -470,11 +470,11 @@
                                 <div class="col-md-6 mb-3">
                                     <label for="validationCustom04">Escalation after every</label>
                                     <input type="number" class="form-control" id="validationCustom04"
-                                        placeholder="in years" [(ngModel)]="escalationAfterEvery" name="contractNo19" required>
+                                        placeholder="in years" [value] = "escalationAfterEvery" [(ngModel)]= "escalationAfterEvery" name="contractNo19" required>
                                     <div class="invalid-feedback">
                                         Escalation after every.
                                     </div>
-                                    {{escalationAfterEvery}}
+                                    
                                 </div>
                             </div>
                         </form>
@@ -484,7 +484,7 @@
                             <button class="btn btn-danger btn-lg pull-right" type="button">Cancel</button>
                             <button class="btn btn-success nextBtn btn-lg pull-right float-lg-right"
                                 type="button">Next</button>
-                            <button class="btn btn-info xtBtn btn-lg pull-right float-lg-right" (click)="myFunc()"
+                            <button class="btn btn-info xtBtn btn-lg pull-right float-lg-right" (click)="myClickFunction($event)"
                                 type="submit"  >Save1</button>
                         </div>
                     </div>

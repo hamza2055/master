@@ -6,8 +6,8 @@ declare var $: any;
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  userName: String = "hamza";
-  Password: string = "Riaz";
+  userName= "hamzaaaaasds";
+  Password= "Riaz";
 
   constructor() { }
 
