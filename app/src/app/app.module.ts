@@ -9,7 +9,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { NewLeaseComponent } from './new-lease/new-lease.component';
 import { LoginComponent } from './login/login.component';
-import LeaseService from './new-lease/LeaseService';
+
 
 @NgModule({
   declarations: [
