@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { LeaseService } from "./leaseService";
 
-const url = "http://compliancetool.herokuapp.com/calculation";
 
 declare var $: any;
 
@@ -27,6 +26,8 @@ export class NewLeaseComponent implements OnInit {
   usefulLifeOfTheAsset = "1";
   escalation = "1";
   escalationAfterEvery = "1";
+  map: Map<string, Map<string, string>>;
+  
 
   calculate() {
     var data = {
@@ -45,12 +46,18 @@ export class NewLeaseComponent implements OnInit {
       escalation: this.escalation,
       escalationAfterEvery: this.escalationAfterEvery
     };
-    var json = this.leaseService.calculate(data);
-    var map = new Map(Object.entries(json));
-    map.forEach(this.display);
+    this.leaseService.calculate(data).then(response => {
+      this.map = new Map(Object.entries(response.data));
+      console.log("In MAP ENTRIES");
+  
+      this.map.forEach((value: Map<string, string>, key: string) => {
+        for (var key in value) {
+          if (value.hasOwnProperty(key)) {
+              console.log(key + " -> " + value[key]);
+          }}
+      });
+    });
   }
-
-  display(values) {}
 
   ngOnInit() {
     $(document).ready(function() {
@@ -131,5 +138,3 @@ export class NewLeaseComponent implements OnInit {
     });
   }
 }
-
-  

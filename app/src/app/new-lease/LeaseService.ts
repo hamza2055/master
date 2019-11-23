@@ -6,8 +6,7 @@ const url = "http://compliancetool.herokuapp.com/calculation/lease";
 export class LeaseService {
   async calculate(data) {
     alert("calling service");
-   
-    const response = await axios.post(url, data);
-    return response.data;
+   const response = await axios.post(url, data);
+    return response;
   }
 }
